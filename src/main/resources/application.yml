@@ -1,0 +1,351 @@
+server:
+  port: 8888
+spring:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    time-zone: UTC
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      write-dates-as-timestamps: false
+  shardingsphere:
+    enabled: true
+    props:
+      sql.show: true
+    datasource:
+      names: ds,ds${0..15}
+      ds:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds0:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_0?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds1:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_1?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds2:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_2?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds3:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_3?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds4:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_4?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds5:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_5?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds6:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_6?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds7:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_7?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds8:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_8?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds9:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_9?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds10:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_10?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds11:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_11?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds12:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_12?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds13:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_13?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds14:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_14?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+      ds15:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        initialSize: 1
+        maxActive: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 1
+        password: root
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/db_15?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+        username: root
+        validationQuery: select 'x'
+    sharding:
+      default-data-source-name: ds
+      tables:
+        # 订单
+        i_order:
+          actual-data-nodes: ds$->{0..11}.i_order
+          database-strategy:
+            standard:
+              shardingColumn: input_time
+              preciseAlgorithmClassName: com.i.lubov.algorithm.DatabaseMonthDividedPrecise
+              rangeAlgorithmClassName: com.i.lubov.algorithm.DatabaseMonthDividedRange
+        # 订单子表
+        i_order_info:
+          actual-data-nodes: ds$->{0..15}.i_order_info_$->{0..15}
+          database-strategy:
+            complex:
+              shardingColumns: order_no
+              algorithmClassName: com.i.lubov.algorithm.DatabaseComplexKeys
+          table-strategy:
+            complex:
+              shardingColumns: order_no
+              algorithmClassName: com.i.lubov.algorithm.TableComplexKeysTable
+        # 运单
+        i_waybill:
+          actual-data-nodes: ds$->{0..15}.i_waybill
+          database-strategy:
+            inline:
+              algorithm-expression: ds$->{user_id % 16}
+              sharding-column: user_id
