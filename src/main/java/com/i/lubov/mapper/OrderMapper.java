@@ -23,4 +23,6 @@ import java.util.List;
 public interface OrderMapper extends BaseMapper<Order> {
 
     List<Order> getList(@Param("date") Date date);
+
+    List<Order> getJoinList(@Param("date") Date date);
 }

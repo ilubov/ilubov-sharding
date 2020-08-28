@@ -20,4 +20,10 @@ import java.util.List;
 public interface OrderService extends IService<Order> {
 
     List<Order> getList(Date date);
+
+    List<Order> getJoinList(Date date);
+
+    List<Order> insertBatch(Date date);
+
+    List<Order> insert(Date date);
 }

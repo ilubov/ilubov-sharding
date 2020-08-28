@@ -6,7 +6,6 @@
 package com.i.lubov.rest;
 
 import cn.hutool.core.date.DateUtil;
-import com.google.common.collect.Lists;
 import com.i.lubov.entity.*;
 import com.i.lubov.service.*;
 import com.i.lubov.util.NoUtil;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -48,28 +46,16 @@ public class DemoController {
         order.setInputTime(DateUtil.parseDateTime(date));
         order.setWaybillNo(NoUtil.getOrderNo("W"));
         orderService.save(order);
+        OrderInfo orderInfo = new OrderInfo();
+        orderInfo.setOrderNo(order.getOrderNo());
+        orderInfoService.save(orderInfo);
         return order;
     }
 
     @GetMapping("/order-batch")
     public List<Order> orderBatch(String date) {
-        int size = 5;
-        Date d = DateUtil.parseDateTime(date);
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(d);
-        List<Order> orders = Lists.newArrayListWithCapacity(size);
-        for (int i = 0; i < size; i++) {
-            if (i > 1) {
-                calendar.add(Calendar.MONTH, 1);
-            }
-            Order order = new Order();
-            order.setOrderNo(NoUtil.getOrderNo("O"));
-            order.setInputTime(calendar.getTime());
-            order.setWaybillNo(NoUtil.getOrderNo("W"));
-            orders.add(order);
-        }
-        orderService.saveBatch(orders);
-        return orders;
+        // return orderService.insertBatch(DateUtil.parseDateTime(date));
+        return orderService.insert(DateUtil.parseDateTime(date));
     }
 
     @GetMapping("/get-order")
@@ -78,13 +64,14 @@ public class DemoController {
     }
 
     @GetMapping("/search-order")
-    public List<Order> searchOrder(Long orderId) {
-        return orderService.query().eq("id", orderId).list();
+    public List<Order> searchOrder(String orderNo) {
+        return orderService.query().eq("order_no", orderNo).list();
     }
 
     @GetMapping("/func-test")
     public List<Order> funcTest(String date) {
-        return orderService.getList(DateUtil.parseDateTime(date));
+        // return orderService.getList(DateUtil.parseDateTime(date));
+        return orderService.getJoinList(DateUtil.parseDateTime(date));
     }
 
     @GetMapping("/order-info")

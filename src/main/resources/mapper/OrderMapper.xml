@@ -30,4 +30,13 @@
         and input_time &lt;= now()
     </select>
 
+    <select id="getJoinList" resultType="com.i.lubov.entity.Order">
+        select
+            o.*
+        from i_order o
+        inner join i_order_info oi on o.order_no = oi.order_no
+        where o.input_time >= #{date}
+        and o.input_time &lt;= now()
+    </select>
+
 </mapper>
